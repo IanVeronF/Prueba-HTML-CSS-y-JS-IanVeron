@@ -1,0 +1,16 @@
+{
+  "name": "plantillahtml-css-js",
+  "version": "1.0.0",
+  "description": "Plantillas de HTML, CSS e inicio JS.",
+  "main": "index.js",
+  "start": {
+    "server:spa": "live-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
