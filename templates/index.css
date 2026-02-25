@@ -1,0 +1,217 @@
+/* =============================
+   IMPORTAR RESET
+   ============================= */
+@import url('reset.css'); /* tu reset simplificado */
+
+/* =============================
+   VARIABLES (pueden venir de variables.css)
+   ============================= */
+:root {
+    --color-primario: #007BFF;
+    --color-secundario: #6C757D;
+    --color-fondo: #FFFFFF;
+    --color-texto: #212529;
+    --color-borde: #CED4DA;
+    --color-acentos: #FFC107;
+
+    --fuente-base: 'Segoe UI', Roboto, sans-serif;
+    --radio-bordes: 4px;
+    --espaciado: 1rem;
+}
+
+/* =============================
+   BODY
+   ============================= */
+body {
+    font-family: var(--fuente-base);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espaciado);
+}
+
+/* =============================
+   ENCABEZADOS
+   ============================= */
+h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+h4, h5, h6 { margin-bottom: 0.5rem; }
+
+/* =============================
+   ENLACES
+   ============================= */
+a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* =============================
+   HEADER Y NAV
+   ============================= */
+header {
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: var(--espaciado);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li {
+    margin-bottom: 1 rem;
+}
+
+/* =============================
+   MAIN  (LAYOUT RESPONSIVE)
+   ============================= */
+main {
+    display: flex;
+    flex-direction: column; /* móvil primero */
+    gap: var(--espaciado);
+    flex-wrap: wrap;
+}
+
+.contenido-principal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado);
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+
+/* =============================
+   SECTION Y ARTICLE
+   ============================= */
+section {
+    padding: var(--espaciado);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+article {
+    margin-bottom: var(--espaciado);
+}
+
+/* =============================
+   FIGURE Y IMÁGENES
+   ============================= */
+figure {
+    margin: var(--espaciado) 0;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: var(--color-secundario);
+    text-align: center;
+}
+
+img, picture img, video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radio-bordes);
+}
+
+/* =============================
+   BLOCKQUOTE
+   ============================= */
+blockquote {
+    border-left: 4px solid var(--color-acentos);
+    padding-left: 1rem;
+    font-style: italic;
+    color: var(--color-secundario);
+    margin: var(--espaciado) 0;
+}
+
+/* =============================
+   FORMULARIO
+   ============================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+input, textarea, select {
+    padding: 0.5rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-bordes);
+    width: 100%; /* adaptable */
+}
+
+button {
+    background-color: var(--color-primario);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radio-bordes);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover,
+button:focus {
+    background-color: #0056b3;
+}
+
+/* =============================
+   DETAILS Y SUMMARY
+   ============================= */
+details {
+    padding: 0.5rem 0;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-bordes);
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* =============================
+   FOOTER
+   ============================= */
+footer {
+    text-align: center;
+    padding: var(--espaciado);
+    background-color: var(--color-secundario);
+    color: #fff;
+    margin-top: var(--espaciado);
+}
+
+/* =============================
+   MEDIA QUERIES
+   ============================= */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row; /* columnas en tablet/desktop */
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .contenido-principal {
+        flex: 2 1 0;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1024px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+}

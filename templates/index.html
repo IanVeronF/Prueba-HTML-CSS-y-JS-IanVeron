@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Plantilla HTML adaptable y semántica"
+        />
+        <title>Plantilla Web Adaptable</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png"
+        />
+
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="reset.css" />
+
+        <!-- Variables CSS -->
+        <link rel="stylesheet" href="variables.css" />
+
+        <!-- Estilo principal -->
+        <link rel="stylesheet" href="index.css" />
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <!-- ================= HEADER ================= -->
+        <header>
+            <h1>Mi Plantilla Web</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#contenido" title="Ir al contenido principal"
+                            >Contenido</a
+                        >
+                    </li>
+                    <li><a href="#formulario">Formulario</a></li>
+                    <li><a href="#multimedia">Multimedia</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- ================= MAIN ================= -->
+        <main>
+            <!-- CONTENIDO PRINCIPAL -->
+            <!-- ===== SECTION 1 ===== -->
+            <section class="contenido-principal">
+                <h2>Artículo principal</h2>
+                <article>
+                    <h3>Título del artículo</h3>
+                    <p>
+                        Este es un párrafo con
+                        <strong>importancia</strong> y <em>énfasis</em>.
+                    </p>
+
+                    <figure>
+                        <img
+                            src="assets/perrito.jpg"
+                            alt="Cachorro de perro golden color caro"
+                            loading="lazy"
+                        />
+                        <figcaption>
+                            Cachorro de la raza golden de un mes de vida
+                        </figcaption>
+                    </figure>
+
+                    <blockquote cite="https://ejemplo.com/fuente">
+                        Esta es una cita larga obtenida de otra fuente.
+                    </blockquote>
+                </article>
+            </section>
+
+            <!-- ===== SECTION 2 - MULTIMEDIA ===== -->
+            <section id="multimedia">
+                <h2>Video</h2>
+                <video controls poster="./assets/perrito.jpg">
+                    <source src="video.mp4" type="video/mp4" />
+                    Tu navegador no soporta el elemento video.
+                </video>
+
+                <h2>Imagen adaptable</h2>
+                <picture>
+                    <source
+                        srcset="imagen-grande.jpg"
+                        media="(min-width: 1024px)"
+                    />
+                    <source
+                        srcset="imagen-mediana.jpg"
+                        media="(min-width: 600px)"
+                    />
+                    <img src="imagen-pequena.jpg" alt="Imagen adaptable" />
+                </picture>
+
+                <h2>Contenido desplegable</h2>
+                <details>
+                    <summary>Más información</summary>
+                    <p>Este contenido se muestra al desplegar el elemento.</p>
+                </details>
+            </section>
+        </main>
+
+        <!-- ================= FORMULARIO ================= -->
+        <section id="formulario">
+            <h2>Formulario de contacto</h2>
+            <form action="/procesar" method="POST" autocomplete="on">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Tu nombre"
+                        required
+                        minlength="2"
+                        maxlength="50"
+                    />
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="4"
+                        cols="40"
+                        required
+                    ></textarea>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="terminos" required />
+                        Acepto los términos
+                    </label>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+        <footer>
+            <p>&copy; 2026 Mi Proyecto Web</p>
+        </footer>
+    </body>
+</html>
